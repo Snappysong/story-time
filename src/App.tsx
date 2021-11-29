@@ -1,40 +1,38 @@
 import React, {useState} from 'react';
 import './App.css';
 import DeckDetail from './components/DeckDetail';
-import StoryCard from './components/StoryCard';
 
-import myDeck from './data'
+import myDecks from './data'
 
 const App = () => {
-  const [playerHealth, setPlayerHealth] = useState(0)//number of starting health
-  const [playerResource, setPlayerResource] = useState(0)
-  const [storyCards, setStoryCards] = useState([])//array of story cards
-  const [gameOver, setGameOver] = useState(false)//keep track if game is still going
+  const [decks, setDecks] = useState(myDecks)//array of story cards
 
-  const handleStart = () => {}
 
   return (
     <div className="App">
       <h1>Story Time</h1>
-      <button className="start" onClick={handleStart}>
-        Start Adventure
-      </button>
-      <p className="health">Health:</p>
-      <p className="resource">Resource:</p>
 
-      <DeckDetail 
-        deckID={1}
-        image="image here"
-        description="deck description"
-      />
-      <p>Loading story...</p>
-      <StoryCard 
-        story="story card"
-        choice1="choice 1"
-        choice2="choice 2"
-        choice3="choice 3"
-      />
-      
+      <h3>Create a Story</h3>
+      <div>
+        <button>Create New Story</button>
+      </div>
+
+      <hr />
+      <h3>Read a Story</h3>
+      <div>
+        {decks && decks.map((deck) => (
+          <div key={deck.deckID}>
+            <DeckDetail
+              deckID={deck.deckID}
+              image={deck.image}
+              imagealt={deck.imagealt}
+              description={deck.description}
+              playerHealth={deck.playerHealth}
+            />
+          </div>
+        ))}
+      </div>
+
     </div>
   );
 }
