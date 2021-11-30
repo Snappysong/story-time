@@ -1,5 +1,5 @@
 import React from 'react';
-import Menu from './Menu';
+import Navigationbar from './components/Navbar';
 import Router from './Router';
 
 const Layout = () => {
@@ -8,7 +8,7 @@ const Layout = () => {
         <div>
             <div>
                 <div>
-                    <Menu />
+                    <Navigationbar />
                 </div>
                 <div>
                     <Router />

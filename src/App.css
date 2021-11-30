@@ -1,9 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap');
 
-.App {
+* {
   font-family: 'Tangerine', cursive;
-  font-size: 42px;
-  text-align: center;
 }
 
 
