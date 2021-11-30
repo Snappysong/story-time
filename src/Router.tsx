@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import NotFound from './routes/NotFound';
 import Dashboard from './routes/Dashboard';
 import StoryNew from './routes/StoryNew';
+import PlayDeck from './routes/PlayDeck';
 
 const Router = () => {
 
@@ -10,6 +11,7 @@ const Router = () => {
         <Routes>
             <Route path="/" element={<Dashboard />} />
             <Route path="new" element={<StoryNew />} />
+            <Route path="play/:deckID" element={<PlayDeck />} />
             <Route path="*" element={<NotFound />} />
         </Routes>
     )

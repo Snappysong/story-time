@@ -11,29 +11,23 @@ type Props = {
     cardButtons: Button[];
 }
 
-const StoryCard: React.FC<Props> = ({
+const StoryCardDetail: React.FC<Props> = ({
     cardID,
     cardText,
     healthChange,
     cardButtons,
 }) => {
 
-    const handleClick = (e: Button) => {
-        console.log(e.pointer)
-    }
-
     return (
         <div>
+            Card ID: {cardID}
             Story Text {cardText}
-
+            starting health {healthChange}
             {cardButtons.map((button) => (
-                <ul key={cardID}>
-                    {/* <li><button onClick={handleClick}> {button.title} </button></li>  */}
-                </ul>
+                <div>{button.title} and {button.pointer}</div>
             ))}
-
         </div>
     )
 }
 
-export default StoryCard
+export default StoryCardDetail

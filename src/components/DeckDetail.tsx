@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 type Props = {
     deckID: number;
@@ -16,8 +17,9 @@ const DeckDetail: React.FC<Props> = ({
     playerHealth,
 }) => {
 
+    let navigate = useNavigate();
     const handleStart = () => {
-        console.log(image)
+        navigate(`/play/${deckID}`)
     }
 
     return (

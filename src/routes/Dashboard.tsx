@@ -30,22 +30,15 @@ interface Deck {
 const Dashboard = () => {
     const [decks, setDecks] = useState(myDecks)//array of story cards
 
-
-    const handleNewStory = () => {
-        
-    }
-
     return (
       <div className="App">
-        <h1>Story Time</h1>
-  
-        <h3>Create a Story</h3>
+        <h1>Create</h1>
         <div>
           <Link to="new">Create New Story</Link>
         </div>
   
         <hr />
-        <h3>Read a Story</h3>
+        <h1>Play</h1>
 
         <div>
           {decks && decks.map((deck: Deck) => (
