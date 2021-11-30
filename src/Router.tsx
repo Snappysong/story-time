@@ -12,6 +12,7 @@ const Router = () => {
             <Route path="/" element={<Dashboard />} />
             <Route path="new" element={<StoryNew />} />
             <Route path="play/:deckID" element={<PlayDeck />} />
+            {/* <Route path="play/:deckID/:cardID" element={<playing cards one at a time />} /> */}
             <Route path="*" element={<NotFound />} />
         </Routes>
     )
