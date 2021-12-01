@@ -62,6 +62,8 @@ const Dashboard = () => {
           ))}
         </div>
 
+        <hr />
+        
         {todos && todos.map((todo: any) => (
           <div key={todo.id}>
             {todo.title}
