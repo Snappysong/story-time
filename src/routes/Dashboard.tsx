@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 import DeckDetail from '../components/DeckDetail';
 
@@ -28,15 +28,10 @@ interface Deck {
 
 
 const Dashboard = () => {
+
+  //in real app use api to set myDecks from server
     const [decks, setDecks] = useState(myDecks)//array of story cards
 
-    const [todos, setTodos] = useState<any>([]);
-
-    useEffect(() => {
-      fetch('https://jsonplaceholder.typicode.com/todos/')
-      .then(response => response.json())
-      .then(setTodos)
-    }, [])
 
     return (
       <div className="App">
@@ -62,14 +57,6 @@ const Dashboard = () => {
           ))}
         </div>
 
-        <hr />
-        
-        {todos && todos.map((todo: any) => (
-          <div key={todo.id}>
-            {todo.title}
-            {todo.completed}
-          </div>
-        ))}
       </div>
     );  
 }

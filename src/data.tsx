@@ -8,6 +8,7 @@ interface StoryCard {
     cardID: number;
     cardText: string;
     healthChange: number;
+    equipmentChange: any;
     cardButtons: Button[];
 }
 
@@ -25,11 +26,12 @@ const myDecks: Deck[] = [{
     image: 'images/soldierdeck.png',
     imagealt: 'soldiers facing battle',
     description: 'this is a deck description: fun adventure as a warrior in battle.',
-    playerHealth: 5,
+    playerHealth: 2,
     storyCards: [{
         cardID: 1,
         cardText: 'intro story',
         healthChange: 0,
+        equipmentChange: "",
         cardButtons: [{
             title: 'forward',
             pointer: 2
@@ -44,6 +46,7 @@ const myDecks: Deck[] = [{
         cardID: 2,
         cardText: 'dodged forward',
         healthChange: -1,
+        equipmentChange: "",
         cardButtons: [{
             title: 'meet the team',
             pointer: 5
@@ -52,6 +55,7 @@ const myDecks: Deck[] = [{
         cardID: 3,
         cardText: 'stood ground',
         healthChange: 0,
+        equipmentChange: "",
         cardButtons: [{
             title: 'meet the team',
             pointer: 5
@@ -60,6 +64,7 @@ const myDecks: Deck[] = [{
         cardID: 4,
         cardText: 'fleeeee',
         healthChange: -2,
+        equipmentChange: "",
         cardButtons: [{
             title: 'meet the team',
             pointer: 5
@@ -67,7 +72,8 @@ const myDecks: Deck[] = [{
     },{
         cardID: 5,
         cardText: 'meet the team, get some story, choose a weap',
-        healthChange: +10,
+        healthChange: 0,
+        equipmentChange: "",
         cardButtons: [{
             title: 'sword and board',
             pointer: 6
@@ -82,6 +88,7 @@ const myDecks: Deck[] = [{
         cardID: 6,
         cardText: 'battle with sword and board',
         healthChange: 0,
+        equipmentChange: "add sword+shield",
         cardButtons: [{
             title: 'battle lost',
             pointer: 9
@@ -90,6 +97,7 @@ const myDecks: Deck[] = [{
         cardID: 7,
         cardText: 'battle with spear',
         healthChange: 0,
+        equipmentChange: "add spear+dagger",
         cardButtons: [{
             title: 'battle lost',
             pointer: 9
@@ -98,6 +106,7 @@ const myDecks: Deck[] = [{
         cardID: 8,
         cardText: 'battle with greataxe',
         healthChange: 0,
+        equipmentChange: "add greataxe",
         cardButtons: [{
             title: 'battle lost',
             pointer: 9
@@ -106,6 +115,7 @@ const myDecks: Deck[] = [{
         cardID: 9,
         cardText: 'battle lost, friends dead, run for your life',
         healthChange: 0,
+        equipmentChange: "",
         cardButtons: [{
             title: 'rest at cabin',
             pointer: 10
@@ -119,7 +129,8 @@ const myDecks: Deck[] = [{
     },{
         cardID: 10,
         cardText: 'rest at cabin and hear about betrayal',
-        healthChange: +10,
+        healthChange: 5,
+        equipmentChange: "",
         cardButtons: [{
             title: 'the betrayal',
             pointer: 13
@@ -127,7 +138,8 @@ const myDecks: Deck[] = [{
     },{
         cardID: 11,
         cardText: 'meet travelers and hear about betrayal',
-        healthChange: +10,
+        healthChange: 5,
+        equipmentChange: "",
         cardButtons: [{
             title: 'the betrayal',
             pointer: 13
@@ -135,7 +147,8 @@ const myDecks: Deck[] = [{
     },{
         cardID: 12,
         cardText: 'hear betrayers speaking with boss',
-        healthChange: +10,
+        healthChange: 5,
+        equipmentChange: "",
         cardButtons: [{
             title: 'the betrayal',
             pointer: 13
@@ -144,6 +157,7 @@ const myDecks: Deck[] = [{
         cardID: 13,
         cardText: "the betrayal, how do you want to do this?",
         healthChange: 0,
+        equipmentChange: "",
         cardButtons: [{
             title: 'deliver challenge',
             pointer: 14
@@ -155,6 +169,7 @@ const myDecks: Deck[] = [{
         cardID: 14,
         cardText: 'deliver challenge at sunset, what do you say?',
         healthChange: 0,
+        equipmentChange: "",
         cardButtons: [{
             title: 'because of your betrayal...',
             pointer: 16
@@ -169,6 +184,7 @@ const myDecks: Deck[] = [{
         cardID: 15,
         cardText: 'how do you want to sneak in?',
         healthChange: 0,
+        equipmentChange: "",
         cardButtons: [{
             title: 'sneak by the gate guards',
             pointer: 19
@@ -183,6 +199,7 @@ const myDecks: Deck[] = [{
         cardID: 16,
         cardText: 'because of your betrayal...',
         healthChange: 0,
+        equipmentChange: "",
         cardButtons: [{
             title: 'the final battle',
             pointer: 22
@@ -191,6 +208,7 @@ const myDecks: Deck[] = [{
         cardID: 17,
         cardText: 'for the good of the people...',
         healthChange: 0,
+        equipmentChange: "",
         cardButtons: [{
             title: 'the final battle',
             pointer: 22
@@ -199,6 +217,7 @@ const myDecks: Deck[] = [{
         cardID: 18,
         cardText: 'this is for my lost brothers...',
         healthChange: 0,
+        equipmentChange: "",
         cardButtons: [{
             title: 'the final battle',
             pointer: 22
@@ -207,6 +226,7 @@ const myDecks: Deck[] = [{
         cardID: 19,
         cardText: 'try to sneak by, get caught and beaten up before facing the BBEG',
         healthChange: -2,
+        equipmentChange: "",
         cardButtons: [{
             title: 'the final battle',
             pointer: 22
@@ -215,6 +235,7 @@ const myDecks: Deck[] = [{
         cardID: 20,
         cardText: 'jump the town walls',
         healthChange: 0,
+        equipmentChange: "",
         cardButtons: [{
             title: 'how to sneak by',
             pointer: 23
@@ -223,6 +244,7 @@ const myDecks: Deck[] = [{
         cardID: 21,
         cardText: 'swim up the river',
         healthChange: 0,
+        equipmentChange: "",
         cardButtons: [{
             title: 'how to sneak by',
             pointer: 23
@@ -231,6 +253,7 @@ const myDecks: Deck[] = [{
         cardID: 22,
         cardText: 'the final battle',
         healthChange: 0,
+        equipmentChange: "",
         cardButtons: [{
             title: 'be aggresive',
             pointer: 24
@@ -245,6 +268,7 @@ const myDecks: Deck[] = [{
         cardID: 23,
         cardText: 'how to sneak by',
         healthChange: 0,
+        equipmentChange: "",
         cardButtons: [{
             title: 'hit the rooftops',
             pointer: 27
@@ -259,6 +283,7 @@ const myDecks: Deck[] = [{
         cardID: 24,
         cardText: 'be aggresive',
         healthChange: -2,
+        equipmentChange: "",
         cardButtons: [{
             title: 'final battle 2',
             pointer: 32
@@ -267,6 +292,7 @@ const myDecks: Deck[] = [{
         cardID: 25,
         cardText: 'test his defences',
         healthChange: -1,
+        equipmentChange: "",
         cardButtons: [{
             title: 'final battle 2',
             pointer: 32
@@ -275,6 +301,7 @@ const myDecks: Deck[] = [{
         cardID: 26,
         cardText: 'let him make the first move',
         healthChange: 0,
+        equipmentChange: "",
         cardButtons: [{
             title: 'final battle 2',
             pointer: 32
@@ -283,6 +310,7 @@ const myDecks: Deck[] = [{
         cardID: 27,
         cardText: 'sneak by rooftops',
         healthChange: -2,
+        equipmentChange: "",
         cardButtons: [{
             title: 'the final battle',
             pointer: 22
@@ -291,6 +319,7 @@ const myDecks: Deck[] = [{
         cardID: 28,
         cardText: 'grabbed a bad disguise',
         healthChange: -2,
+        equipmentChange: "",
         cardButtons: [{
             title: 'the final battle',
             pointer: 22
@@ -299,6 +328,7 @@ const myDecks: Deck[] = [{
         cardID: 29,
         cardText: 'started a distraction',
         healthChange: 0,
+        equipmentChange: "",
         cardButtons: [{
             title: 'slay the BBEG',
             pointer: 30
@@ -310,6 +340,7 @@ const myDecks: Deck[] = [{
         cardID: 30,
         cardText: 'BBEG death',
         healthChange: 0,
+        equipmentChange: "",
         cardButtons: [{
             title: 'epilogue',
             pointer: 39
@@ -318,6 +349,7 @@ const myDecks: Deck[] = [{
         cardID: 31,
         cardText: 'mercy for the BBEG',
         healthChange: 0,
+        equipmentChange: "",
         cardButtons: [{
             title: 'epilogue',
             pointer: 39
@@ -326,6 +358,7 @@ const myDecks: Deck[] = [{
         cardID: 32,
         cardText: 'final battle 2',
         healthChange: 0,
+        equipmentChange: "",
         cardButtons: [{
             title: 'pocket some dirt',
             pointer: 33
@@ -340,6 +373,7 @@ const myDecks: Deck[] = [{
         cardID: 33,
         cardText: 'pocket some dirt and throw em',
         healthChange: 0,
+        equipmentChange: "",
         cardButtons: [{
             title: 'choice of no honor',
             pointer: 36
@@ -348,6 +382,7 @@ const myDecks: Deck[] = [{
         cardID: 34,
         cardText: 'taunt him',
         healthChange: -1,
+        equipmentChange: "",
         cardButtons: [{
             title: 'final battle 3',
             pointer: 37
@@ -356,6 +391,7 @@ const myDecks: Deck[] = [{
         cardID: 35,
         cardText: 'charge him',
         healthChange: -2,
+        equipmentChange: "",
         cardButtons: [{
             title: 'final battle 3',
             pointer: 37
@@ -364,6 +400,7 @@ const myDecks: Deck[] = [{
         cardID: 36,
         cardText: 'choice of no honor',
         healthChange: -5,
+        equipmentChange: "",
         cardButtons: [{
             title: 'death',
             pointer: 40
@@ -372,6 +409,7 @@ const myDecks: Deck[] = [{
         cardID: 37,
         cardText: 'final slash',
         healthChange: -1,
+        equipmentChange: "",
         cardButtons: [{
             title: 'happy ending',
             pointer: 38
@@ -380,6 +418,7 @@ const myDecks: Deck[] = [{
         cardID: 38,
         cardText: 'happy ending',
         healthChange: 0,
+        equipmentChange: "",
         cardButtons: [{
             title: 'epilogue',
             pointer: 39
@@ -388,11 +427,13 @@ const myDecks: Deck[] = [{
         cardID: 39,
         cardText: 'epilogue',
         healthChange: 0,
+        equipmentChange: "",
         cardButtons: []
     },{
         cardID: 40,
         cardText: 'death',
         healthChange: 0,
+        equipmentChange: "",
         cardButtons: []
     }]
 }]
