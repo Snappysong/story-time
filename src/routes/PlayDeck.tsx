@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import StoryCardDetail from '../components/StoryCardDetail';
 
@@ -37,6 +37,7 @@ const PlayDeck = () => {
         playerHealth: 0,
         equipment: [],
     })
+    const [gameOver, setGameOver] = useState<boolean>(false)
     
     //finds what deck to play from params
     let params = useParams();
@@ -55,24 +56,30 @@ const PlayDeck = () => {
         }
     }
 
-    //should handle all changes to stats and currentCard
-    const handleChange = (pointer: number, healthChange: number, equipmentChange: string) => {
-        setStats({
-            playerHealth: stats.playerHealth + healthChange,
-            equipment: applyEquipmentChange(stats.equipment, equipmentChange)
-        })
-        console.log('stats set', stats.playerHealth)
-        //this check needs to happen earlier
-        //health is dropping to 0 and one card will still continue.
-        if (currentDeck && stats.playerHealth <= 0){
+    useEffect(() => {
+        if(gameOver === true && currentDeck){
             let len = currentDeck.storyCards.length
             setCurrentCard(currentDeck.storyCards[len-1].cardID)
             console.log('death triggered')
-        } else {
+        }
+    },[gameOver])
+
+    //should handle all changes to stats and currentCard
+    const handleChange = (pointer: number, healthChange: number, equipmentChange: string) => {
+        //this check needs to happen earlier
+        //health is dropping to 0 and one card will still continue.
+        console.log(stats.playerHealth)
+        if (isPlayerAlive(stats)){
             setCurrentCard(pointer)
             console.log('next card')
+            setStats({
+                playerHealth: stats.playerHealth + healthChange,
+                equipment: applyEquipmentChange(stats.equipment, equipmentChange)
+            })
+            console.log('stats set', stats.playerHealth)
+        } else {
+            setGameOver(true)
         }
-
     }
   
     if (currentCard !== 0){
@@ -105,7 +112,15 @@ const PlayDeck = () => {
     }
 }
 
-
+const isPlayerAlive = (stats: Stats) => {
+    if (stats.playerHealth <= 0){
+        console.log('no health left')
+        return false
+    } else {
+        console.log('still alive')
+        return true
+    }
+}
 
 const applyEquipmentChange = (equipmentArray: string[], equipmentChange: string) => {
     if (equipmentChange.includes('add')){
