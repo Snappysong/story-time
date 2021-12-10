@@ -68,6 +68,8 @@ const PlayDeck = () => {
     const handleChange = (pointer: number, healthChange: number, equipmentChange: string) => {
         //this check needs to happen earlier
         //health is dropping to 0 and one card will still continue.
+
+        //maybe change the 'check' to see if health is at 0 to a useEffect that triggers everytime the stats change?
         console.log(stats.playerHealth)
         if (isPlayerAlive(stats)){
             setCurrentCard(pointer)
