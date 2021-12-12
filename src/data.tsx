@@ -71,7 +71,7 @@ const myDecks: Deck[] = [{
         }]
     },{
         cardID: 5,
-        cardText: 'meet the team, get some story, choose a weap',
+        cardText: 'CHOICE RESULT NEXT CARD WOULD BE ---> meet the team, get some story -----> choose a weap',
         healthChange: 0,
         equipmentChange: "",
         cardButtons: [{

@@ -56,6 +56,7 @@ const PlayDeck = () => {
         }
     }
 
+    //checks if death has occurred and if so sends user to final card
     useEffect(() => {
         if(gameOver === true && currentDeck){
             let len = currentDeck.storyCards.length
@@ -64,14 +65,8 @@ const PlayDeck = () => {
         }
     },[gameOver])
 
-    //make another useEffect for stats health check
-
-    //should handle all changes to stats and currentCard
+    //function passed down as a prop to storyCardDetail to handle changes
     const handleChange = (pointer: number, healthChange: number, equipmentChange: string) => {
-        //this check needs to happen earlier
-        //health is dropping to 0 and one card will still continue.
-
-        //maybe change the 'check' to see if health is at 0 to a useEffect that triggers everytime the stats change?
         console.log(stats.playerHealth)
         if (isPlayerAlive(stats)){
             setCurrentCard(pointer)
