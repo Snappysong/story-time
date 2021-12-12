@@ -64,6 +64,8 @@ const PlayDeck = () => {
         }
     },[gameOver])
 
+    //make another useEffect for stats health check
+
     //should handle all changes to stats and currentCard
     const handleChange = (pointer: number, healthChange: number, equipmentChange: string) => {
         //this check needs to happen earlier
