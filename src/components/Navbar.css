@@ -10,16 +10,15 @@
     height: 50px;
     width: 300px;
     font-size: 64px;
-    color: blue;
-}
+    color: green;
 
-.navbar-space {
-    flex-grow: 1;
-}
+    .navbar-space {
+        flex-grow: 1;
+    }
 
-.navbar-links {}
+    .navbar-links {}
 
-.navbar-item {
-    padding: 10px;
-    font-size: 26px;
-}
+    .navbar-item {
+        padding: 10px;
+        font-size: 26px;
+    }
