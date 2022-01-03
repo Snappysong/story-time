@@ -67,7 +67,7 @@ const PlayDeck = () => {
 
     //function passed down as a prop to storyCardDetail to handle changes
     const handleChange = (pointer: number, healthChange: number, equipmentChange: string) => {
-        console.log(stats.playerHealth)
+        console.log(stats.playerHealth, 'hi')
         if (isPlayerAlive(stats)){
             setCurrentCard(pointer)
             console.log('next card')
